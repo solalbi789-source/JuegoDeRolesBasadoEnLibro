@@ -1,0 +1,84 @@
+
+export const NUEVAS_MISIONES = [
+  {
+    id: "mision_bosque_olvido",
+    titulo: "El Susurro del Bosque",
+    descripcion: "Te adentrás en el Bosque del Olvido siguiendo el rastro de la reliquia. La niebla se vuelve densa y escuchas una voz que pronuncia tu nombre desde un viejo sauce hueco.",
+    requisitos: { vidaMinima: 15 },
+    opciones: [
+      {
+        texto: "Acercarse al sauce con el arma en la mano",
+        resultado: "El sauce resulta ser un guardián. Te desafía a un duelo de voluntad.",
+        siguienteNodo: "nodo_sauce_combate",
+        recompensa: { experiencia: 50 }
+      },
+      {
+        texto: "Usar un amuleto antiguo para disipar la niebla",
+        resultado: "La niebla se abre y revela un sendero oculto que esquiva el peligro.",
+        siguienteNodo: "nodo_sendero_oculto",
+        requiereItem: "Amuleto Antiguo", // Si no lo tiene, esta opción aparece bloqueada en la UI
+        recompensa: { oro: 20 }
+      }
+    ]
+  },
+  {
+    id: "mision_taberna_subterranea",
+    titulo: "Intriga en la Taberna del Tuerto",
+    descripcion: "Encontrás la entrada secreta al sótano de la taberna. Un grupo de contrabandistas debate sobre un mapa que detalla las alcantarillas del castillo.",
+    requisitos: { oroMinimo: 5 },
+    opciones: [
+      {
+        texto: "Comprar el mapa ofreciendo 10 monedas de oro",
+        resultado: "Los contrabandistas aceptan el trato de buena gana y te dan un consejo extra.",
+        siguienteNodo: "nodo_alcantarillas_Castillo",
+        recompensa: { items: ["Mapa de las Alcantarillas"] }
+      },
+      {
+        texto: "Escuchar desde las sombras para memorizar la ruta",
+        resultado: "Hacés un movimiento en falso y un guardia te descubre. ¡Hay que correr!",
+        siguienteNodo: "nodo_persecucion_callejon",
+        recompensa: { experiencia: 20 }
+      }
+    ]
+  },
+  {
+    id: "mision_paramo_espejos",
+    titulo: "El Páramo de los Espejos",
+    descripcion: "El suelo aquí está cubierto de cristales altamente reflectantes. Ves múltiples versiones de vos mismo reflejadas, pero una de ellas no se mueve como vos...",
+    requisitos: { vidaMinima: 30 },
+    opciones: [
+      {
+        texto: "Romper el espejo que muestra el reflejo alterado",
+        resultado: "El cristal estalla y libera un fragmento de energía pura que absorbe tu inventario.",
+        siguienteNodo: "nodo_energia_absorbida",
+        recompensa: { items: ["Fragmento de Cristal Estelar"] }
+      },
+      {
+        texto: "Cerrar los ojos y avanzar guiándote solo por el oído",
+        resultado: "Superás la ilusión óptica sin caer en las trampas del páramo.",
+        siguienteNodo: "nodo_salida_paramo",
+        recompensa: { experiencia: 100 }
+      }
+    ]
+  },
+  {
+    id: "mision_biblioteca_cenizas",
+    titulo: "Los Archivos Quemados",
+    descripcion: "Llegás a las ruinas de la gran biblioteca del libro de las eras. Entre las cenizas, un tomo de magia prohibida brilla con un fuego frío que no quema.",
+    requisitos: { vidaMinima: 10 },
+    opciones: [
+      {
+        texto: "Agarrar el tomo con las manos desnudas",
+        resultado: "El fuego frío te marca la piel, pero el conocimiento del libro ahora es tuyo.",
+        siguienteNodo: "nodo_conocimiento_prohibido",
+        recompensa: { hechizos: ["Fuego Frío"], dañoSufrido: 5 }
+      },
+      {
+        texto: "Usar unos guantes de cuero pesados para guardarlo",
+        resultado: "El tomo se deshace en polvo de estrellas apenas lo tocás con el cuero. Perdiste la oportunidad.",
+        siguienteNodo: "nodo_biblioteca_vacia",
+        recompensa: { experiencia: 10 }
+      }
+    ]
+  }
+];
